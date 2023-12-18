@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //fucntions and var declaration are hoisted
+      //safer to access only after initialized
+
+      moreComplex(); //hoisting.html:23 Uncaught ReferenceError: Cannot access 'fn' before initialization at moreComplex (hoisting.html:23:21)
+
+      const fn = "ram";
+      const ln = "kri";
+
+      var random = "rando";
+      console.log(fn);
+
+      function moreComplex() {
+        console.log(fn, ln, random);
+      }
+
+      //moreComplex();//it will work
+    </script>
+  </body>
+</html>

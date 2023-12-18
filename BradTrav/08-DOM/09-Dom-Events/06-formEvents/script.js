@@ -1,4 +1,5 @@
 const form=document.getElementById('item-form')
+
   
 function onSubmit(e){
   e.preventDefault()
@@ -22,6 +23,7 @@ function onSubmit2(e){
   const item=formData.get('item')//name atribute from html parameter as get method
   const priority=formData.get('priority')
   const itemEntries=formData.entries()
+
   for(let entry of itemEntries){
     console.log(entry[1])
   }

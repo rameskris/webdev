@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //approach to avoid global pollution
+      //good way to protrcting the scope of your function and the variables with in it
+
+      const num1 = 30;
+      const num2 = 50;
+
+      function add() {
+        console.log(`the result is ${num1 + num2}`);
+      }
+      add();
+
+      (function () {
+        console.log("first");
+      })();
+
+      const add2 = (function (num1, num2) {
+        return num1 + num2;
+      })(90, 100);
+      console.log(add2);
+    </script>
+  </body>
+</html>
