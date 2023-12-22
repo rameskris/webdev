@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>i'm para 1</p>
+    <p>i'm para 2</p>
+    <p>i'm para 3</p>
+    <p>i'm para 4</p>
+    <p>i'm para 5</p>
+    <p>i'm para 6</p>
+    <p>i'm para 7</p>
+    <p>i'm para 8</p>
+    <p>i'm para 9</p>
+    <p>i'm para 10</p>
+
+    <script>
+      const cuts = ["Chuck", "Brisket", "Shank", "Short Rib"];
+      for (const [ind, value] of cuts.entries()) {
+        console.log(ind, value);
+      }
+
+      //   for of gives values for in gives index
+
+      function addNumber() {
+        let total = 0;
+        for (num of arguments) {
+          total += num;
+        }
+        return total;
+      }
+
+      const tot = addNumber(20, 40, 56, 78, 99);
+      console.log(tot);
+
+      const p = document.querySelectorAll("p");
+      for (const para of p) {
+        para.addEventListener("click", function () {
+          console.log(this.textContent);
+        });
+      }
+
+      for (let i = 0; i < cuts.length; i++) {
+        console.log(cuts[i]);
+      }
+
+      cuts.forEach((cut) => {
+        if (cut === "Brisket") {
+          //  continue
+          // Uncaught SyntaxError: Illegal break statement you cannt use break or con in foreach
+        }
+        console.log(cut);
+      });
+
+      for (cut in cuts) {
+        console.log(cuts[cut]);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-transform: capitalize;
+      }
+      .btn {
+        background: #f15025;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ES6</h1>
+    <h1>Javascript</h1>
+    <h1>HTML</h1>
+    <h1>CSS</h1>
+    <script>
+      //Spread operator
+      //Allows an iterable to spread/expand individually inside reciever
+      //split into single items and copy them
+      //importatn we are copy not just refering them
+      const udemy = "udemy";
+      const letters = [...udemy];
+      console.log(letters);
+
+      const boys = ["john", "peter", "bob"];
+      const girls = ["susan", "anna"];
+      const bestFriend = "arnold";
+
+      const friends = [...boys, ...girls, bestFriend];
+      console.log(friends);
+      //Referencing
+      //   const newFriends = friends;
+      //copying
+      const newFriends = [...friends];
+
+      newFriends[0] = "ramesh";
+      console.log("new Friends List", newFriends);
+      console.log("Friends List", friends);
+    </script>
+  </body>
+</html>

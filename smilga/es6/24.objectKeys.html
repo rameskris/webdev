@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+          three methods to convert objects into arrays
+          object.keys()-converts property names to array
+          object.values()-converts property values into array
+          object.entries()-converts both
+        */
+
+      const person = {
+        name: "jhon",
+        age: 25,
+        status: "student",
+      };
+
+      const personKeysArray = Object.keys(person);
+      console.log(personKeysArray);
+
+      const personValueArray = Object.values(person);
+      console.log(personValueArray);
+
+      const personBoth = Object.entries(person);
+      console.log(personBoth);
+
+      const newResult = personBoth.map((item) => {
+        const [key, value] = item;
+        console.log(key, value);
+        return value;
+      });
+      console.log(newResult);
+
+      //for of
+
+      for (const [first, second] of personBoth) {
+        console.log(first, second);
+      }
+    </script>
+  </body>
+</html>

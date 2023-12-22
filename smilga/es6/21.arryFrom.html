@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-transform: capitalize;
+      }
+      .btn {
+        background: #f15025;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ES6</h1>
+    <p>john</p>
+    <p>peter</p>
+    <p>susan</p>
+    <h2 id="result"></h2>
+    <h1 id="second"></h1>
+    <script>
+      //Arry.from and Arry.of not on the prototype
+      const example = ["one", "two", "three"];
+      console.log(example);
+      console.log(example.map);
+      console.log(example.from); //undefined
+      console.log(example.of); //undefined
+      //Array.of creates a new Array from variable number of arguments
+      const friends = Array.of("jpn", 12, true);
+      console.log(friends); //['jpn', 12, true]
+
+      //from turns array-like/ish into an array -string,nodelist,set
+      //returns array object from any object has or with a length property
+
+      const udemy = "udemy";
+      console.log(Array.from(udemy)); //['u', 'd', 'e', 'm', 'y']
+
+      function tot() {
+        console.log(arguments);
+
+        let total = Array.from(arguments).reduce(
+          (total, cur) => (total += cur),
+          0
+        );
+        return total;
+      }
+      console.log(tot(12, 45, 13));
+
+      const p = document.querySelectorAll("p");
+      const result = document.getElementById("result");
+      const second = document.getElementById("second");
+
+      let newText = Array.from(p);
+      newText = newText
+        .map((item) => `<span>${item.textContent}</span>`)
+        .join(" ");
+      result.innerHTML = newText;
+
+      //
+
+      const text = Array.from(
+        p,
+        (item) => `<span>${item.textContent}</span>`
+      ).join(" ");
+      second.innerHTML = text;
+    </script>
+  </body>
+</html>

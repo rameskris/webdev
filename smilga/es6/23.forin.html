@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //for in loop iterate over object properties
+      //not advised to use it on arrays especially if the order is important
+      // on arrat use "for of " loop instead
+
+      const person = {
+        name: "jhon",
+        age: 25,
+        status: "student",
+      };
+
+      for (const propertyName in person) {
+        console.log(propertyName, person[propertyName]);
+      }
+    </script>
+  </body>
+</html>

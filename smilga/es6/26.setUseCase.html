@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //new Set()-accepts iterable objects
+      const products = [
+        {
+          title: "high-back bench",
+          company: "ikea",
+        },
+        {
+          title: "albany table",
+          company: "marcos",
+        },
+        {
+          title: "accent chair",
+          company: "caressa",
+        },
+        {
+          title: "wooden table",
+          company: "ikea",
+        },
+      ];
+
+      const company = products.map((item) => item.company);
+
+      const uniqueCompany = new Set(company);
+
+      console.log(uniqueCompany);
+
+      const finalCompanies = [...uniqueCompany];
+      console.log(finalCompanies);
+
+      const result = [...new Set(products.map((item) => item.company))];
+      console.log(result);
+    </script>
+  </body>
+</html>

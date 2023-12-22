@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-transform: capitalize;
+      }
+      .btn {
+        background: #f15025;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">click me</button>
+    <script>
+      /*
+        arrow fucntion
+        no name,always expression,assign to variable
+        no fucntion keyword
+        this
+        */
+
+      const sayHi = () => console.log("first");
+      sayHi();
+
+      const double = (value) => value * 2;
+      const num = double(2);
+      console.log(num);
+      //return object
+      const object = () => ({ name: "rame", age: 25 });
+      console.log(object());
+      const numbers = [2, 3, 4, 5, 6];
+      const big = numbers.filter((num, index) => {
+        console.log(index);
+        return num > 2;
+      });
+      console.log(big);
+
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", function () {
+        this.style.color = "black";
+        setTimeout(() => {
+          this.style.color = "yellow";
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

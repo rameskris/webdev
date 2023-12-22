@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = { name: "jhon", job: "developer" };
+      //to copy not referecnce it
+      //here we add new property after spread
+      //we rename jhon to peter
+      const newPerson = {
+        ...person,
+        name: "peter",
+        adress: {
+          city: "chennai",
+          state: "TN",
+        },
+      };
+      console.log(newPerson);
+    </script>
+  </body>
+</html>

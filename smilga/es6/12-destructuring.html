@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Destructuring
+        faster/easier way to access/unpack values from arrays
+        objects into variables
+        Arrays
+        Destructuring swap variables
+        faster/easier way to access/unpack values from arrays
+        object into variables
+
+        */
+      const fruits = ["orange", "banana", "lemon"];
+      const friends = ["john", "peter", "bob", "anna", "kelly"];
+
+      const orange = fruits[0];
+      const banana = fruits[1];
+      const lemon = fruits[2];
+
+      console.log(orange);
+      //const [john, peter, bob, anna, kelly, sus] = friends;
+
+      // console.log(sus); //undefind sus out of index
+      //to skip values
+      const [john, , bob, , , sus] = friends;
+      console.log(john, bob);
+
+      let first = "rame";
+      let second = "kris";
+      [first, second] = [second, first];
+      console.log(first);
+    </script>
+  </body>
+</html>

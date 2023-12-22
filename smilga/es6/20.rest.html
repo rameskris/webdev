@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //rest operator
+      //gathers/collects the items
+      //rest element must be last one
+      //arrays
+      const fruits = ["orange", "banana", "lemon"];
+      const [first, ...rest] = fruits;
+      console.log(first, rest);
+
+      //objects
+      const person = { name: "jhon", lastName: "smith", job: "Dev" };
+      const { job, ...props } = person;
+      console.log(job, props);
+
+      // const { ...props,job } = person;rest element must be last one
+
+      //collecting parameters when passing in the fucntion
+      //REST operator for parameters(when you setup fucntinality how you handle paramenters)
+      // SPREAD for arguments
+
+      const testScores = [23, 45, 78, 90, 100];
+
+      const getAvg = (name, ...scores) => {
+        console.log(name);
+        let tot = 0;
+        for (const score of scores) {
+          tot += score;
+        }
+        console.log(tot);
+      };
+      getAvg(person.name, 23, 45, 78, 90);
+
+      getAvg(person.name, ...testScores); //spread here passing it each individual item
+    </script>
+  </body>
+</html>

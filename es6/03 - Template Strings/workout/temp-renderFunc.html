@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const beer = {
+        name: "Belgian Wit",
+        brewery: "Steam Whistle Brewery",
+        keywords: ["pale", "cloudy", "spiced", "crisp"],
+      };
+
+      const renderFunction = (keywords) => {
+        return `
+        ${keywords.map((keyword) => `<li>${keyword}</li>`).join("")}
+        `;
+      };
+
+      const markUp = `
+      <div>
+        <h1>${beer.name}</h1>
+        <p>${beer.brewery}</p>
+        ${renderFunction(beer.keywords)}
+        </div>
+      `;
+      document.body.innerHTML = markUp;
+    </script>
+  </body>
+</html>

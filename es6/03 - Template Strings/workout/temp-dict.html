@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bio"></div>
+    <script>
+      const dict = {
+        HTML: "Hyper Text Markup Language",
+        CSS: "Cascading Style Sheets",
+        JS: "JavaScript",
+      };
+
+      const first = "Wes";
+      const last = "Bos";
+
+      function addAbb(strings, ...values) {
+        const abbVal = values.map((val) => {
+          if (dict[val]) {
+            return `<abbr title="${dict[val]}">${val}</abbr>`;
+          }
+          return val;
+        });
+
+        return strings.reduce((sentence, string, i) => {
+          return `${sentence}${string}${abbVal[i]} `;
+        }, "");
+      }
+
+      const sentence = addAbb`
+      Hi my name is ${first} ${last} and I love to code ${"JS"}, ${"HTML"} and ${"CSS"} all day and all night long!
+      `;
+      const bio = document.querySelector(".bio");
+      const p = document.createElement("P");
+      p.innerHTML = sentence;
+      bio.appendChild(p);
+    </script>
+  </body>
+</html>

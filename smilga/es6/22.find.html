@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //find-gets specific item unlike filter returns array
+      //find index get index of the item
+      //every=every item in the array
+      //some atleast one item
+
+      const people = [
+        { id: 1, name: "jhon" },
+        { id: 2, name: "peter" },
+        { id: 3, name: "anna" },
+      ];
+      ////if no matches it'd return undefined
+      const anna = people.find((person) => person.id === 3);
+      console.log(anna);
+
+      //findindex
+      const annaIndex = people.findIndex((person) => person.id === 3);
+      console.log(annaIndex);
+
+      const newPeop = people.slice(0, annaIndex);
+      console.log(newPeop);
+
+      //
+      const grades = ["a", "b", "a", "b", "c"];
+      const goodGrades = ["a", "b", "a", "b"];
+
+      const allGoodgrades = grades.every((grade) => grade !== "c");
+      console.log(allGoodgrades);
+
+      const badGrades = goodGrades.some((grade) => grade === "c");
+      console.log(badGrades);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //let,const -blocked scope{}-anything with {}
+      //var-fucntion scoped
+
+      var amount = 100;
+
+      function greet() {
+        var random = "some random value";
+        console.log(`${amount},${random}`);
+      }
+
+      var total = 1000;
+      var test = true;
+
+      if (test) {
+        var total = "oranges";
+        console.log("hello therer");
+      }
+      console.log(total);
+
+      //let
+
+      let tot = 1000;
+      let tes = true;
+
+      if (tes) {
+        //outside this block no access
+        let tot = "oranges";
+        console.log("hello therer");
+      }
+      console.log(tot);
+    </script>
+  </body>
+</html>

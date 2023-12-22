@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        first: "Wes",
+        last: "Bos",
+        country: "Canada",
+        city: "Hamilton",
+        twitter: "@wesbos",
+      };
+
+      const { first, last } = person;
+
+      const wes = {
+        first: "Wes",
+        last: "Bos",
+        links: {
+          social: {
+            twitter: "https://twitter.com/wesbos",
+            facebook: "https://facebook.com/wesbos.developer",
+          },
+          web: {
+            blog: "https://wesbos.com",
+          },
+        },
+      };
+
+      //   const {
+      //     links: {
+      //       social: { twitter: tw },
+      //       web: { blog },
+      //     },
+      //   } = wes;
+      //   console.log(blog);
+      const { twitter: tw, facebook: fb } = wes.links.social;
+      //   let settings = { color: "black" };
+      //   const {
+      //     width = 100,
+      //     color = "red",
+      //     height = 10,
+      //     fontsize = 25,
+      //   } = settings;
+
+      // const { w: width = 400, h: height = 100 } = { w: 800 };
+
+      const {
+        links: {
+          social: { twitter },
+          web: { blog },
+        },
+      } = wes;
+      console.log(twitter, blog);
+
+      // console.log(width);
+    </script>
+  </body>
+</html>

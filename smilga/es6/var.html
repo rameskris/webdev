@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //var let const
+      //define,update,redifine
+      //const cannot mutate primitive type
+
+      //define
+      var number = 100;
+      console.log(number);
+
+      //update
+      number = 200;
+      console.log(number);
+
+      //redefine
+      var number = "orange";
+      console.log(number);
+
+      //define
+      let amount = 100;
+      console.log(amount);
+
+      //update
+      amount = 200;
+      console.log(amount);
+
+      //redefine you cannot redifine
+      // let amount = "orange"; // Uncaught SyntaxError: Identifier 'amount' has already been declared (at var.html:35:11)
+      console.log(amount);
+
+      //define
+      const numb = 100;
+      console.log(numb);
+
+      //update
+      //numb = 200;               // Uncaught TypeError: Assignment to constant variable.
+      //console.log(numb);
+
+      //redefine
+      //   const numb = "orange";
+      //   console.log(numb);
+
+      //we allowed to mutate value but we cannot reaign our whole value together
+      const person = {
+        name: "bob",
+      };
+      person.name = "jhon";
+      console.log(person.name);
+
+      // we cannot reasign our whole value together
+      const person = "orange"; //Identifier 'person' has already been declared
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="people">
+      <p>Wes</p>
+      <p>Kait</p>
+      <p>Snickers</p>
+    </div>
+
+    <script>
+      const people = document.querySelectorAll(".people  p");
+      //   const peopleArray = Array.from(people);
+      //   const names = peopleArray.map((p) => p.textContent);
+      //   console.log(names);
+
+      const peopleArray = Array.from(people, function (person) {
+        return person.textContent;
+      });
+      console.log(peopleArray);
+    </script>
+  </body>
+</html>

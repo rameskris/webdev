@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //new string methods casesenitive
+      //startsWith(),endsWith(),includes(),repeat()
+
+      const person = "Peter Smith";
+      const employee = "23456-EMP-PETER-SMITH";
+      const manager = "23456-MAN-JOHN-DOE";
+      //startsWith()
+      console.log(person.startsWith("Pet")); //true
+      console.log(person.startsWith("pet")); //false casesenitive
+      console.log(employee.startsWith("EMP", 6)); //omit first six characters
+
+      //endsWith
+      console.log(employee.endsWith("EMP")); //false
+      console.log(employee.endsWith("EMP", 9)); //true only consider first 9 characters
+      //includes
+      console.log(manager.includes("JOHN"));
+      //repeat
+      const rep = (person, amount = 5) => person.repeat(amount);
+      console.log(rep(person));
+    </script>
+  </body>
+</html>

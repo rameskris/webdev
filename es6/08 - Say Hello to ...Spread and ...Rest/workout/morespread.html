@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="people">
+      <p>Wes</p>
+      <p>Kait</p>
+      <p>Randy</p>
+    </div>
+  </body>
+  <script>
+    const p = [...document.querySelectorAll(".people p")];
+    p.map((p) => console.log(p.textContent));
+    console.log(p);
+
+    const deepDish = {
+      pizzaName: "Deep Dish",
+      size: "Medium",
+      ingredients: ["Marinara", "Italian Sausage", "Dough", "Cheese"],
+    };
+
+    const comments = [
+      { id: 209384, text: "I love your dog!" },
+      { id: 523423, text: "Cuuute! 🐐" },
+      { id: 632429, text: "You are so dumb" },
+      { id: 192834, text: "Nice work on this wes!" },
+    ];
+
+    const id = 632429;
+    const commentIndex = comments.findIndex((comment) => comment.id === id);
+
+    console.log(
+      comments.slice(0, commentIndex),
+      comments.slice(commentIndex + 1)
+    );
+    const newComments = [
+      ...comments.slice(0, commentIndex),
+      ...comments.slice(commentIndex + 1),
+    ];
+    console.log(newComments);
+  </script>
+</html>

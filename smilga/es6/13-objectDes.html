@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Destructuring
+      // faster/easier way to access/unpack values from arrays
+      // objects into variables
+      // Objects
+
+      const bob = {
+        first: "bob",
+        last: "sanders",
+        city: "chicago",
+        siblings: {
+          sister: "jane",
+          address: {
+            doorNo: 90,
+          },
+        },
+      };
+
+      const {
+        first: firstName,
+        last,
+        city,
+        siblings: {
+          sister,
+          address: { doorNo },
+        },
+      } = bob;
+      console.log(firstName, last, city, sister, doorNo);
+    </script>
+  </body>
+</html>

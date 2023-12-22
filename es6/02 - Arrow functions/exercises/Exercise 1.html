@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <ul>
+      <li data-time="5:17">Flexbox Video</li>
+      <li data-time="8:22">Flexbox Video</li>
+      <li data-time="3:34">Redux Video</li>
+      <li data-time="5:23">Flexbox Video</li>
+      <li data-time="7:12">Flexbox Video</li>
+      <li data-time="7:24">Redux Video</li>
+      <li data-time="6:46">Flexbox Video</li>
+      <li data-time="4:45">Flexbox Video</li>
+      <li data-time="4:40">Flexbox Video</li>
+      <li data-time="7:58">Redux Video</li>
+      <li data-time="11:51">Flexbox Video</li>
+      <li data-time="9:13">Flexbox Video</li>
+      <li data-time="5:50">Flexbox Video</li>
+      <li data-time="5:52">Redux Video</li>
+      <li data-time="5:49">Flexbox Video</li>
+      <li data-time="8:57">Flexbox Video</li>
+      <li data-time="11:29">Flexbox Video</li>
+      <li data-time="3:07">Flexbox Video</li>
+      <li data-time="5:59">Redux Video</li>
+      <li data-time="3:31">Flexbox Video</li>
+    </ul>
+
+    <script>
+      // Select all the list items on the page and convert to array
+      const listItems = Array.from(document.querySelectorAll("li"));
+      console.log(listItems);
+
+      // Filter for only the elements that contain the word 'Flexbox'
+      const FlexboxItems = listItems.filter((item) =>
+        item.textContent.includes("Flexbox")
+      );
+      console.log(FlexboxItems);
+
+      // map down to a list of time strings
+      const timeString = FlexboxItems.map((item) =>
+        item.dataset.time.split(":").map((part) => parseFloat(part))
+      );
+
+      // map to an array of seconds
+      const timeTosec = timeString.map((time) => {
+        return time[0] * 60 + time[1];
+      });
+      console.log("timeto", timeTosec);
+      // reduce to get total
+      const totalSec = timeTosec.reduce((curr, tot) => {
+        return curr + tot;
+      }, 0);
+      console.log(totalSec);
+      // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
+    </script>
+  </body>
+</html>
